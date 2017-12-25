@@ -6,3 +6,29 @@
 
 ## About
 This project is a Java port of the original [drawille](https://github.com/asciimoo/drawille) python project by [asciimoo](https://github.com/asciimoo).
+
+## Examples
+```java
+Canvas canvas = new Canvas ( 208, 54 - 1 );
+for ( int x = 0; x <= canvas.getWidth () * 10; x++ ) {
+	canvas.set ( x / 10, ( int ) Math.round ( 10 + Math.cos ( x * Math.PI / 180 ) * 10 ) );
+}
+canvas.render ();
+```
+```java
+Turtle turtle = new Turtle ( 75, 50 );
+turtle.move ( turtle.getWidth () / 2, turtle.getHeight () / 2 );
+turtle.down ();
+for ( int x = 0; x < 36; x++ ) {
+    turtle.right ( 10 );
+    for ( int y = 0; y < 36; y++ ) {
+        turtle.right ( 10 );
+        turtle.forward ( 5 );
+    }
+}
+turtle.render ();
+```
+
+## Building & Running
+-	mvn package
+-	java -Dfile.encoding=UTF-8 -cp target/drawille-1.0.0.jar io.raffi.drawille.Application 
