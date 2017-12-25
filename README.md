@@ -1,4 +1,4 @@
-# drawille
+# Drawille
 > Pixel graphics in terminal implemented with unicode braille characters
 
 ![MIT License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)
