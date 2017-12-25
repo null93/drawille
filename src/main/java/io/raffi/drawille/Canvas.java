@@ -48,7 +48,7 @@ public class Canvas {
 	 * @return          void
 	 */
 	protected void checkRange ( int x, int y ) {
-		if ( x > this.getWidth () || y > this.getHeight () || x < 0 || y < 0 ) {
+		if ( x >= this.getWidth () || y >= this.getHeight () || x < 0 || y < 0 ) {
 			throw new DrawilleException ( x, y );
 		}
 	}
