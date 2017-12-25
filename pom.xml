@@ -29,7 +29,7 @@
 				<configuration>
 					<includes>
 						<include>src/**/*.java</include>
-					</includes> 
+					</includes>
 					<replacements>
 						<replacement>
 							<token>(\*\s+@version\s+)([0-9\.]+)</token>
