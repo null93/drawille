@@ -3,7 +3,7 @@ package io.raffi.drawille;
 import java.util.Arrays;
 
 /**
- * This class stores a 3 by 2 pixel matrix that is eventually translated into a braille character.
+ * This class stores a 4 by 2 pixel matrix that is eventually translated into a braille character.
  * This method abstracts away all the calculations that is needed to transform a matrix into a
  * braille character. This class is meant to be used as a sub-matrix.
  * @version             1.0.0
@@ -17,7 +17,7 @@ public class BrailleMap {
 	/**
 	 * @var             Integer             UNICODE_OFFSET      Braille characters unicode offset
 	 * @var             Integer []          TRANSFORM_MATRIX    Transformation matrix for braille
-	 * @var             Boolean []          map                 Flattened pixel map matrix (3 by 2)
+	 * @var             Boolean []          map                 Flattened pixel map matrix (4 by 2)
 	 */
 	protected final static int UNICODE_OFFSET = 10240;
 	protected final static int [] TRANSFORM_MATRIX = { 1, 8, 2, 16, 4, 32, 64, 128 };
@@ -34,7 +34,7 @@ public class BrailleMap {
 
 	/**
 	 * This method takes in a horizontal and vertical component and checks to see if it is in range
-	 * of the pixel matrix.  Since braille can be expressed by a 3 by 2 dot matrix, these bounds are
+	 * of the pixel matrix.  Since braille can be expressed by a 4 by 2 dot matrix, these bounds are
 	 * taken to be the upper bound respectively while negative numbers are taken as the lower bound.
 	 * @param           Integer             x                   Horizontal coordinate
 	 * @param           Integer             y                   Vertical coordinate
