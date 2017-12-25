@@ -9,25 +9,27 @@ This project is a Java port of the original [drawille](https://github.com/asciim
 
 ## Examples
 ```java
-Canvas canvas = new Canvas ( 208, 54 - 1 );
+Canvas canvas = new Canvas ( 75, 50 );
 for ( int x = 0; x <= canvas.getWidth () * 10; x++ ) {
 	canvas.set ( x / 10, ( int ) Math.round ( 10 + Math.cos ( x * Math.PI / 180 ) * 10 ) );
 }
 canvas.render ();
 ```
+![Example #01](doc/assets/example_1.png)
 ```java
 Turtle turtle = new Turtle ( 75, 50 );
 turtle.move ( turtle.getWidth () / 2, turtle.getHeight () / 2 );
 turtle.down ();
-for ( int x = 0; x < 36; x++ ) {
-    turtle.right ( 10 );
-    for ( int y = 0; y < 36; y++ ) {
-        turtle.right ( 10 );
-        turtle.forward ( 5 );
+for ( int x = 0; x < 72; x++ ) {
+    turtle.right ( 20 );
+    for ( int y = 0; y < 72; y++ ) {
+        turtle.right ( 20 );
+        turtle.forward ( 10 );
     }
 }
 turtle.render ();
 ```
+![Example #02](doc/assets/example_2.png)
 
 ## Building & Running
 -	mvn package
