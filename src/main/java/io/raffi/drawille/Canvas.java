@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * This class is used to hold all the BrailleMap objects and uses them as sub-matrices. It is an
  * abstraction of a pixel screen.  Methods to interact with those pixels can be found in this class.
- * @version             1.0.0
+ * @version             1.0.1
  * @package             io.raffi.drawille
  * @author              Rafael Grigorian <me@raffi.io>
  * @copyright           2018 Rafael Grigorian — All Rights Reserved

@@ -6,7 +6,7 @@
 	<groupId>io.raffi</groupId>
 	<artifactId>drawille</artifactId>
 	<packaging>jar</packaging>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 	<name>drawille</name>
 	<url>http://maven.apache.org</url>
 	<properties>
