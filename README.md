@@ -2,7 +2,7 @@
 > Pixel graphics in terminal implemented with unicode braille characters
 
 ![MIT License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)
-![Version 1.0.0](https://img.shields.io/badge/Version-1.0.0-lightgrey.svg?style=for-the-badge)
+![Version 1.0.2](https://img.shields.io/badge/Version-1.0.2-lightgrey.svg?style=for-the-badge)
 ![Travis CI](https://img.shields.io/travis/null93/drawille.svg?style=for-the-badge&colorB=9f9f9f)
 
 ## About

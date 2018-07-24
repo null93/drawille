@@ -1,7 +1,6 @@
 package io.raffi.drawille;
 
 import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
@@ -124,6 +123,20 @@ public class CanvasTest extends TestCase {
 		assertFalse ( canvas.get ( 0, 0 ) );
 		assertFalse ( canvas.get ( 1, 1 ) );
 		assertFalse ( canvas.get ( 1, 2 ) );
+	}
+
+	public void testRenderOverload () {
+		try {
+			ByteArrayOutputStream output = new ByteArrayOutputStream ();
+			Canvas canvas = new Canvas ( 1, 2 );
+			canvas.set ( 1, 1 );
+			canvas.set ( 1, 2 );
+			String result = canvas.render ( output ).toString ().replace ( "\n", "" );
+			assertTrue ( result.equals ("\u2830\u2800") );
+		}
+		catch ( Exception e ) {
+			assertTrue ( false );
+		}
 	}
 
 }

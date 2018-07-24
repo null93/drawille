@@ -1,11 +1,13 @@
 package io.raffi.drawille;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.util.Arrays;
 
 /**
  * This class is used to hold all the BrailleMap objects and uses them as sub-matrices. It is an
  * abstraction of a pixel screen.  Methods to interact with those pixels can be found in this class.
- * @version             1.0.1
+ * @version             1.0.2
  * @package             io.raffi.drawille
  * @author              Rafael Grigorian <me@raffi.io>
  * @copyright           2018 Rafael Grigorian — All Rights Reserved
@@ -145,15 +147,39 @@ public class Canvas {
 	/**
 	 * This method traverses through all the BrailleMap objects and renders out the sub-matrices by
 	 * asking for the object's string value with the getString method. It then prints them all out
-	 * to the screen.
+	 * to the screen by using the overloaded cooresponding render method.
+	 * @return void
 	 */
 	public void render () {
+		ByteArrayOutputStream stream = new ByteArrayOutputStream ();
+		try {
+			this.render ( stream );
+		}
+		catch ( IOException e ) {
+			System.out.print ( e );
+		}
+		System.out.print ( stream.toString () );
+	}
+
+	/**
+	 * This method traverses through all the BrailleMap objects and renders out the sub-matrices by
+	 * asking for the object's string value with the getString method. It then writes said output to
+	 * the specified ByteArrayOutputStream. This stream is then returned back to caller for method
+	 * chaining.
+	 * @param           ByteArrayOutputStream       stream      Stream to write to
+	 * @return          ByteArrayOutputStream                   Same stream that was passed in
+	 * @throws          IOException                             ByteArrayOutputStream throws exception
+	 */
+	public ByteArrayOutputStream render ( ByteArrayOutputStream stream ) throws IOException {
 		for ( int i = 0; i < this.width * this.height; i++ ) {
-			System.out.print ( this.screen [ i ] );
+			String brailleMap = this.screen [ i ].toString ();
+			byte [] buffer = brailleMap.getBytes ();
+			stream.write ( buffer );
 			if ( i % this.width == this.width - 1 ) {
-				System.out.println ("");
+				stream.write ( "\n".toString ().getBytes () );
 			}
 		}
+		return stream;
 	}
 
 }
