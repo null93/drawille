@@ -10,8 +10,8 @@ This project is a Java port of the original [drawille](https://github.com/asciim
 
 ## Examples
 ```java
-Canvas canvas = new Canvas ( 75, 50 );
-for ( int x = 0; x <= canvas.getWidth () * 10; x++ ) {
+Canvas canvas = new Canvas ( 75, 6 );
+for ( int x = 0; x <= canvas.getWidth () * 8; x++ ) {
 	canvas.set ( x / 10, ( int ) Math.round ( 10 + Math.cos ( x * Math.PI / 180 ) * 10 ) );
 }
 canvas.render ();
