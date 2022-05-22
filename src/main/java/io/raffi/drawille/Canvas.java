@@ -15,6 +15,8 @@ import java.util.Arrays;
  */
 public class Canvas {
 
+	private final static byte[] lineEndingBytes=System.lineSeparator().toString ().getBytes ();
+
 	/**
 	 * @var             Integer             width               Width of the canvas
 	 * @var             Integer             height              Height of the canvas
@@ -176,7 +178,7 @@ public class Canvas {
 			byte [] buffer = brailleMap.getBytes ();
 			stream.write ( buffer );
 			if ( i % this.width == this.width - 1 ) {
-				stream.write ( "\n".toString ().getBytes () );
+				stream.write ( lineEndingBytes );
 			}
 		}
 		return stream;
