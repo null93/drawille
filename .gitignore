@@ -1,4 +1,8 @@
-.DS_Store
+# Directories
 /target/
-DEADJOE
+/private/
+
+# Files
+.DS_Store
+*.class
 *~
