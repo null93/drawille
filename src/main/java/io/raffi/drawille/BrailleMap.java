@@ -6,7 +6,7 @@ import java.util.Arrays;
  * This class stores a 4 by 2 pixel matrix that is eventually translated into a braille character.
  * This method abstracts away all the calculations that is needed to transform a matrix into a
  * braille character. This class is meant to be used as a sub-matrix.
- * @version             1.0.2
+ * @version             1.0.3
  * @package             io.raffi.drawille
  * @author              Rafael Grigorian <me@raffi.io>
  * @copyright           2018 Rafael Grigorian — All Rights Reserved
