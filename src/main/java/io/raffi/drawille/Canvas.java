@@ -16,10 +16,12 @@ import java.util.Arrays;
 public class Canvas {
 
 	/**
+	 * @var             Byte []             lineEndingBytes     New line bytes
 	 * @var             Integer             width               Width of the canvas
 	 * @var             Integer             height              Height of the canvas
 	 * @var             BrailleMap []       screen              Flattened screen matrix
 	 */
+	private byte [] lineEndingBytes = System.lineSeparator().toString ().getBytes ();
 	protected int width;
 	protected int height;
 	protected BrailleMap [] screen;
@@ -176,7 +178,7 @@ public class Canvas {
 			byte [] buffer = brailleMap.getBytes ();
 			stream.write ( buffer );
 			if ( i % this.width == this.width - 1 ) {
-				stream.write ( "\n".toString ().getBytes () );
+				stream.write ( lineEndingBytes );
 			}
 		}
 		return stream;
