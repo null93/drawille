@@ -15,13 +15,13 @@ import java.util.Arrays;
  */
 public class Canvas {
 
-	private final static byte[] lineEndingBytes=System.lineSeparator().toString ().getBytes ();
-
 	/**
+	 * @var             Byte []             lineEndingBytes     New line bytes
 	 * @var             Integer             width               Width of the canvas
 	 * @var             Integer             height              Height of the canvas
 	 * @var             BrailleMap []       screen              Flattened screen matrix
 	 */
+	private byte [] lineEndingBytes = System.lineSeparator().toString ().getBytes ();
 	protected int width;
 	protected int height;
 	protected BrailleMap [] screen;
