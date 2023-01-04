@@ -7,7 +7,7 @@ import java.util.Arrays;
 /**
  * This class is used to hold all the BrailleMap objects and uses them as sub-matrices. It is an
  * abstraction of a pixel screen.  Methods to interact with those pixels can be found in this class.
- * @version             1.0.2
+ * @version             1.0.3
  * @package             io.raffi.drawille
  * @author              Rafael Grigorian <me@raffi.io>
  * @copyright           2018 Rafael Grigorian — All Rights Reserved
@@ -16,10 +16,12 @@ import java.util.Arrays;
 public class Canvas {
 
 	/**
+	 * @var             Byte []             lineEndingBytes     New line bytes
 	 * @var             Integer             width               Width of the canvas
 	 * @var             Integer             height              Height of the canvas
 	 * @var             BrailleMap []       screen              Flattened screen matrix
 	 */
+	private byte [] lineEndingBytes = System.lineSeparator().toString ().getBytes ();
 	protected int width;
 	protected int height;
 	protected BrailleMap [] screen;
@@ -216,7 +218,7 @@ public class Canvas {
 			byte [] buffer = brailleMap.getBytes ();
 			stream.write ( buffer );
 			if ( i % this.width == this.width - 1 ) {
-				stream.write ( "\n".toString ().getBytes () );
+				stream.write ( lineEndingBytes );
 			}
 		}
 		return stream;

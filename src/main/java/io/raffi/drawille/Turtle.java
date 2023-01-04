@@ -4,7 +4,7 @@ package io.raffi.drawille;
  * This class inherits from the Canvas class and it tries to implement turtle graphics. The methods
  * in this class can be abstracted with an idea of a pen and paper. One can move the pen in three
  * axis and based on the z axis, when the pen moves it either draws on the paper or not.
- * @version             1.0.2
+ * @version             1.0.3
  * @package             io.raffi.drawille
  * @author              Rafael Grigorian <me@raffi.io>
  * @copyright           2018 Rafael Grigorian — All Rights Reserved

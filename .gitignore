@@ -1,2 +1,8 @@
-.DS_Store
+# Directories
 /target/
+/private/
+
+# Files
+.DS_Store
+*.class
+*~
