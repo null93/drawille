@@ -55,6 +55,46 @@ public class Canvas {
 		}
 	}
 
+	//ttaken from https://rosettacode.org/wiki/Bitmap/Bresenham%27s_line_algorithm#Java
+    public void drawLine(Boolean value, int fromX, int fromY, int toX, int toY) {
+        int d = 0;
+ 
+        int dx = Math.abs(fromX - toX);
+        int dy = Math.abs(fromY - toY);
+ 
+        int dx2 = 2 * dx; // slope scaling factors to
+        int dy2 = 2 * dy; // avoid floating point
+ 
+        int ix = fromX < toX ? 1 : -1; // increment direction
+        int iy = fromY < toY ? 1 : -1;
+ 
+        int x = fromX;
+        int y = fromY;
+ 
+        if (dx >= dy) {
+            while (x != toX) {
+                change(x, y, value);
+             
+                x += ix;
+                d += dy2;
+                if (d > dx) {
+                    y += iy;
+                    d -= dx2;
+                }
+            }
+        } else {
+            while (y != toY) {
+                change(x, y, value);
+     
+                y += iy;
+                d += dx2;
+                if (d > dy) {
+                    x += ix;
+                    d -= dy2;
+                }
+            }
+        }
+    }
 	/**
 	 * This method returns the screen width in the true pixel definition. The user supplied width is
 	 * multiplied by 2 because a braille dot matrix has 2 columns.
